@@ -1,0 +1,150 @@
+.cityWin{
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:2;
+    background-color:#fff;
+
+    .cityWinHead{
+        position: relative;
+        background-image:linear-gradient(90deg, rgb(0, 170, 255), rgb(0, 111, 255));
+        color:#fff;
+        padding:14px 10px 0;
+        height:100px;
+
+        .cityWinTitle{
+            font:{
+                size:18px;
+                weight:600;
+            }
+            text-align:center;
+            padding-bottom:20px;
+        }
+        .citySearchPanel{
+            display: flex;
+            align-items: center;
+
+            .citySearchInputHolder{
+                // width: calc(100% - 45px);
+                width:100%;
+            }
+            .citySearchCancelHolder{
+                display:none;
+                padding-left:15px;
+                width:45px;
+            }
+        }
+        .cityWinReturn{
+            position: absolute;
+            left:0;
+            top:7px;
+        }
+        // .returnIcon{
+        //     font-size:16px;
+        // }
+    }
+    .cityWinBody,.citySearchRes{
+        height:calc(100% - 100px);
+        overflow-y: auto;
+        background-color:#efefef;
+        color:#666;
+    }
+    .cityWinBody{
+        padding-bottom:10px;
+        position:relative;
+
+        .commonCityContainer{
+            padding:0 10px;
+            &+.commonCityContainer{
+                margin-top:10px;
+            }
+            &.allCity{
+                padding:unset;
+
+                .commonCityTitle{
+                    padding:0 10px;
+                }
+            }
+
+            .commonCityTitle{
+                padding:10px 0;
+            }
+            .commonCityContent{
+                .commonCityBlock
+                {
+                    display:inline-block;
+                    width:calc(33% - 10px);
+                    border:1px solid $commoneBorderColor;
+                    background-color:#fff;
+                    padding:10px 0;
+                    margin:0 10px 10px 0;
+                    text-align:center;
+                    border-radius: 4px;
+                    &.commonCityBlockSel{
+                        color:$commonBlue;
+                    }
+                }
+                .cityTypeContainer{
+                    .cityCap{
+                        padding:16px 10px;
+                        font-weight: 600;
+                    }
+                    .cityTypeContent{
+                        background-color: #fff;
+
+                        .cityLineBlock{
+                            padding:12px 0;
+                            margin-left:40px;
+                            &.cityLineBlockSel{
+                                color:$commonBlue;
+                            }
+                            &+.cityLineBlock{
+                                border-top:1px solid $commoneBorderColor;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .cityHashList{
+            position: fixed;
+            right:0;
+            bottom:5px;
+            
+            .cityHashPanel{
+                padding:2px;
+                text-align: center;
+
+                .cityHash{
+                    color:#00c9e2;
+                    font-size:13px;
+                }
+            }
+        }
+    }
+    .citySearchRes{
+        position: fixed;
+        bottom: 0;
+        left:0;
+        width:100%;
+        z-index:1;
+
+        .searchResItem{
+            background-color:#fff;
+            padding:12px 10px;
+            &+.searchResItem{
+                border-top:1px solid $commoneBorderColor;
+            }
+        }
+        .noCityRes{
+            height: 100%;
+            background-color:#fff;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+    }
+}

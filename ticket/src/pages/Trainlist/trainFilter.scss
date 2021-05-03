@@ -1,0 +1,60 @@
+.trainFilterWin{
+    position:fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    z-index: 3;
+
+    .trainFilterMask{
+        background-color:rgba(0,0,0,0.6);
+        position:absolute;
+        bottom:0;
+        left:0;
+        height:100%;
+        width:100%;
+    }
+    .trainFilterContent{
+        background-color:#fff;
+        position:absolute;
+        bottom:0;
+        left:0;
+        // height:300px;
+        width:100%;
+        transition: all 0.15s ease-in;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        padding:20px 16px 30px;
+
+        .trainFilterContentHead{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .filterCancel{
+                color:$commonLightGrey;
+            }
+            .filterClear{
+                color:#333;
+                font:{
+                    size:16px;
+                    weight:600;
+                }
+            }
+            .filterConfirm{
+                color:$commonBlue;
+                font-weight:600;
+            }
+        }
+        .trainFilterContentBody{
+            .trainFilterPanel{
+                padding-top:30px;
+
+                .trainFilterTitle{
+                    font-weight:600;
+                    color:#333;
+                }
+            }
+        }
+    }
+}

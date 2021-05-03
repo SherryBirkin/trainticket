@@ -1,0 +1,97 @@
+html,body{
+    position: relative;
+    height:100%;
+
+    div{
+        box-sizing: border-box;
+    }
+
+    #root,.App,.commonPage{
+        height:100%;
+    }
+
+    .gloBtn{
+        display:block;
+        padding:10px 20px;
+        text-align:center;
+        font-size:18px;
+        border-radius: 4px;
+    }
+    .gloCheckbox{
+        display:none;
+    
+        &+label{
+            position: relative;
+            display: inline-block;
+            padding-right: 26px;
+            line-height: 30px;
+            cursor: pointer;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: keep-all;
+            vertical-align: middle;
+            white-space: nowrap;
+
+            &::before{
+                content: " ";
+                position: absolute;
+                box-sizing: content-box;
+                right: 0;
+                top: 8px;
+                width: 14px;
+                height: 14px;
+                border: 1px solid #CCCCCC;
+                border-radius: 2px;
+                transition: all .15s ease-in-out;
+            }
+            &::after{
+                content: " ";
+                position: absolute;
+                top: 9px;
+                right: 5px;
+                box-sizing: border-box;
+                width: 5px;
+                height: 10px;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+                border: 2px solid transparent;
+                border-top: 0;
+                border-left: 0;
+                transition: all .15s ease-in-out;
+            }
+        }
+
+        &:checked+label{
+            &::before{
+                background-color: $commonBlue;
+                border-color:$commonBlue;
+            }
+            &::after{
+                border-color: #fff;
+            }
+        }
+    }
+    .gloInput{
+        display: inline-block;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border:1px solid $commoneBorderColor;
+        padding: 0 6px;
+        height: 32px;
+        width:100%;
+    }
+
+    .requestingNotice{
+        .requestingNoticePic{
+            height:40px;
+            margin:5px 0 10px;
+            background:{
+                image:url(~_imgPath/logo.png);
+                size:contain;
+                repeat:no-repeat;
+                position:center;
+            }
+        }
+    }
+}

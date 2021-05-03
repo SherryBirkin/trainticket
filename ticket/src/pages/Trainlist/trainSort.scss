@@ -1,0 +1,47 @@
+.trainSort{
+    position: fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    z-index:2;
+
+    .trainSortPanel{
+        background-color: #fff;
+        border-radius: 60px;
+        display:flex;
+        width:calc(100% - 28px);
+        box-shadow: 0 6px 20px #eee;
+        z-index:1;
+        position:absolute;
+        top:0;
+        left:14px;
+        padding:15px 0;
+
+        .sortBlock{
+            width:25%;
+            text-align:center;
+            position: relative;
+            &+.sortBlock{
+                border-left:1px solid $commoneBorderColor;
+            }
+            &.activeSortBlock{
+                color:$commonBlue;
+            }
+
+            .redSpot{
+                display:inline-block;
+                background-color:#ff7700;
+                width:8px;
+                height:8px;
+                border-radius: 8px;
+                position: absolute;
+                top: -6px;
+                right: 6px;
+            }
+        }
+    }
+    .trainSortUnderBlur{
+        height:70px;
+        background-image:linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.9));
+    }
+}

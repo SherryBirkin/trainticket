@@ -1,0 +1,59 @@
+.trainFilterSelContent{
+    width:calc((100% - 10px) / 2);
+    margin-top:10px;
+    display:inline-block;
+    vertical-align: top;
+    &:nth-child(odd){
+        margin-right:10px;
+    }
+
+    .trainFilterSelBlock{
+        box-sizing: border-box;
+        width: 100%;
+        height: 32px;
+        background-color: #f8f8f8;
+        display: inline-flex;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 12px;
+        border-radius: 4px;
+        position: relative;
+        border:1px solid #f8f8f8;
+        color:$commonLightGrey;
+
+        .filterSelActive{
+            display:none;
+            color:#fff;
+            font-size:12px;
+            position:absolute;
+            bottom:0;
+            right:0;
+            border:{
+                color:transparent $commonBlue $commonBlue transparent;
+                width:8px;
+                style:solid;
+            }
+
+            .filterSelActiveIcon{
+                position:absolute;
+                top: -5px;
+                left: -5px;
+                transform: scale(0.8);
+                line-height:initial;
+            }
+        }
+    }
+    .trainFilterSel{
+        display:none;
+        &:checked+.trainFilterSelBlock{
+            border-color:$commonBlue;
+            color:$commonBlue;
+            background-color:#e6f3fe;
+
+            .filterSelActive{
+                display:block;
+            }
+        }
+    }
+}

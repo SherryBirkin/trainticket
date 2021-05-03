@@ -1,0 +1,11 @@
+@mixin bgCenterMix{
+    background:{
+        position:center;
+        repeat:no-repeat;
+    }
+}
+
+@mixin bgContainMix{
+    @include bgCenterMix;
+    background-size:contain;
+}

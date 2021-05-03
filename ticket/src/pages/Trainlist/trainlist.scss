@@ -1,0 +1,216 @@
+// @import "//at.alicdn.com/t/font_2400562_gi44gjda2ir.css";
+@import "@/static/font/iconfont.css";
+
+.trainListWin{
+    $priceColor:#ff6600;
+
+    .trainListWinHead{
+        .trainListWinTitle{
+            .cityWinTitleSta{
+                padding:0 10px;
+            }
+            .cityWinTitleIcon{
+                font-weight:400;
+            }
+        }
+        .trainDateContent{
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 0;
+            background-color: rgba(230,230,230,0.1);
+
+            .trainDatePanel{
+                &.trainDatePanelDisabled{
+                    opacity: 0.6;
+                }
+
+                .trainDateText,.trainDateIcon{
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+    .trainListWinBody{
+        position:relative;
+        padding-bottom: 80px;
+
+        .blueBgBar{
+            position:absolute;
+            background-image:linear-gradient(90deg, rgb(0, 170, 255), rgb(0, 111, 255));
+            height: 32px;
+            width: 100%;
+            left:0;
+            top:0;
+        }
+        .trainListNone{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color:$commonLightGrey;
+            position: relative;
+            &::before{
+                content:"";
+                position:absolute;
+                top:12px;
+                left:0;
+                width:100%;
+                height:20px;
+                z-index: 1;
+                background:{
+                    image:url(~_imgPath/top-mask.png);
+                    size:100%;
+                    repeat:no-repeat;
+                    position:center;
+                }
+            }
+        }
+        .trainBlock{
+            background-color:#fff;
+            width:calc(100% - 20px);
+            margin:0 10px;
+            border-radius: 8px;
+            z-index:1;
+            padding: 15px 10px 0 10px;
+            position: relative;
+            &+.trainBlock{
+                margin-top:10px;
+            }
+
+            .trainCommonPanel{
+                display:flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                &.seatInfoPanel{
+                    flex-wrap:wrap;
+
+                    .seatInfo{
+                        line-height: 20px;
+                        font-weight:600;
+                        margin-top: 6px;
+                        &:not(:nth-child(4)){
+                           margin-right:6.66%; 
+                        }
+                        
+                        .seatAvailPrice{
+                            color:$priceColor;
+
+                            .seatAvailPriceSym{
+                                font:{
+                                    size: 12px;
+                                    weight:400;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .trainCommonItem{
+                    display:inline-block;
+                    width:20%;
+                    &.trainInfoDetail{
+                        font-size:12px;
+                        text-align: center;
+
+                        .spendTime{
+                            line-height: 24px;
+                        }
+                        .toRightSep{
+                            height:1px;
+                            background-image: linear-gradient(90deg,#eee 20%,#d8d8d8);
+                            position: relative;
+                            &::before,&::after{
+                                content:"";
+                                border:{
+                                    width:2px;
+                                    style:solid;
+                                };
+                                position:absolute;
+                                bottom:100%;
+                                right:0;
+                            }
+                            &::before{
+                                border-color: transparent transparent #d8d8d8 transparent;
+                            }
+                            &::after{
+                                border-color: transparent transparent transparent #d8d8d8;
+                            }
+                        }
+                        .trainNamePanel{
+                            .trainCode,.trainCardIcon{
+                                vertical-align: middle;
+                            }
+                            .trainCardIcon{
+                                margin-left:4px;
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                    &.trainInfoArrive,&.trainInfoPrice{
+                        text-align:right;
+                    }
+                    &.trainInfoArrive{
+                        position: relative;
+
+                        .diffDay{
+                            position: absolute;
+                            left:100%;
+                            top: 3px;
+                            font-size: 12px;
+                            color: #000;
+                        }
+                    }
+                    &.trainInfoPrice{
+                        color:$priceColor;
+                        font-weight:600;
+                        width: 24%;
+
+                        .lowestPriceText{
+                            font-size:12px;
+                        }
+                        .lowestPrice{
+                            font-size:21px;
+                        }
+                    }
+
+                    .trainStaTime{
+                        font:{
+                            size:24px;
+                            weight:700;
+                        }
+                        &.trainStaStartTime{
+                            color:$commonBlue;
+                        }
+                        &.trainStaArriveTime{
+                            color:#000;
+                        }
+                    }
+                    .trainStaName{
+                        padding:5px 0;
+                    }
+                }
+            }
+            .seatInfoPanelContainer{
+                overflow: hidden;
+                transition: height 0.5s ease;
+            }
+            .trainSeatChangeViewIconPanel{
+                text-align:center;
+                transition:all 0.2s linear;
+                
+                .trainSeatChangeViewIcon{
+                    font-size: 20px;
+                    color:#aaa;
+                    // position: relative;
+                    // transition: all 0.5s linear;
+                    // animation:move 0.75s infinite;
+                    // @keyframes move {
+                    //     from{top:0}
+                    //     to{top:-2px}
+                    // }
+                }
+            }
+        }
+    }
+}
